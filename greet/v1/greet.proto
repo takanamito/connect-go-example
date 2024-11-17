@@ -13,5 +13,7 @@ message GreetResponse {
 }
 
 service GreetService {
-  rpc Greet(GreetRequest) returns (GreetResponse) {}
+  rpc Greet(GreetRequest) returns (GreetResponse) {
+    option idempotency_level = NO_SIDE_EFFECTS;
+  }
 }
